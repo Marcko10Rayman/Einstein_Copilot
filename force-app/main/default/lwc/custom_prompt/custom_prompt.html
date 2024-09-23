@@ -1,6 +1,17 @@
 <template>
     <lightning-card  title="Prompt Questions">
-        <lightning-button label="Car Details" slot="actions" onclick={handleButton}></lightning-button>
+        <div class="slds-m-around_large">
+            <lightning-combobox
+            name="questions"
+            label="Questions"
+            value={question}
+            placeholder="Select a question"
+            options={options}
+            onchange={handleChange} ></lightning-combobox>
+        </div>
+        <div class="slds-m-around_large">
+            <lightning-button label="Send" onclick={handleButton}></lightning-button>
+        </div>
         <div class="slds-m-around_large">
             <div if:true={onSpinner}>
                 <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
