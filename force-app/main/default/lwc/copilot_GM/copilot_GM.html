@@ -1,0 +1,16 @@
+<template>
+    <div class="slds-m-around_large">
+        <div if:true={onSpinner} class="slds-is-relative">
+            <lightning-card title="">
+                <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+            </lightning-card>
+        </div>
+        <div if:false={onSpinner} class="slds-is-relative">
+            <lightning-flow
+            flow-api-name={flowName}
+            flow-input-variables={inputVariables}
+            onstatuschange={handleStatusChange}>
+            </lightning-flow>
+        </div>
+    </div>
+</template>
